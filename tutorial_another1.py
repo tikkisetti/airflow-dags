@@ -51,6 +51,8 @@ t2 = BashOperator(
     dag=dag,
 )
 
+
+
 dag.doc_md = __doc__
 
 t1.doc_md = """\
@@ -82,4 +84,14 @@ t4 = BashOperator(
     retries=3,
     dag=dag,
 )
-t1 >> [t2, t3, t4]
+
+t5 = BashOperator(
+    task_id='echo',
+    depends_on_past=False,
+    bash_command="echo 'This is Chandresh'",
+    retries=3,
+    dag=dag,
+)
+
+
+t1 >> [t2, t3, t4, t5]
