@@ -38,7 +38,7 @@ dag = DAG(
 )
 
 t1 = KubernetesPodOperator(
-        namespace='default',
+        namespace='sai-test',
         image='alpine',
         cmds=["sh", "-c", "sleep 100000"],
         name="t1",
