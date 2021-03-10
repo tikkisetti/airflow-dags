@@ -47,4 +47,5 @@ t1 = KubernetesPodOperator(
         in_cluster=True,
         task_id="t1",
         get_logs=True,
+        dag=dag,
     )
